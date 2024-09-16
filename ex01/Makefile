@@ -1,4 +1,4 @@
-NAME		= Polymorphism
+NAME		= Brain
 CXX			= c++
 CXXFLAGS	= -std=c++98 -Wall -Wextra -Werror
 
