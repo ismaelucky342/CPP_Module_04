@@ -1,0 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ismherna <ismherna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/18 20:22:47 by ismherna          #+#    #+#             */
+/*   Updated: 2024/10/29 19:16:30 by ismherna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
+
+#include "ICharacter.hpp"
+#include "AMateria.hpp"
+
+class Character: public ICharacter
+{
+	public:
+		Character();
+		Character(std::string _name);
+		Character(Character &tocopy);
+		~Character();
+		Character & operator = (Character &toequalize);
+
+		virtual std::string const & getName() const;
+		virtual void equip(AMateria* m);
+		virtual void unequip(int idx);
+		virtual void use(int idx, ICharacter& target);
+	private:
+		std::string name;
+		AMateria *slots[4];
+};
+
+#endif

@@ -5,49 +5,55 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ismherna <ismherna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 17:50:45 by ismherna          #+#    #+#             */
-/*   Updated: 2024/09/16 17:50:46 by ismherna         ###   ########.fr       */
+/*   Created: 2024/10/01 18:03:14 by ismherna          #+#    #+#             */
+/*   Updated: 2024/10/17 21:54:33 by ismherna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void) : type("UnSet"){
-
-	std::cout << "class [Animal](void) constructor called!\n";
+Animal::Animal()
+{
+	if (INFOS)
+		std::cout << "Animal - Default constructor called." << std::endl;
+	type = "???";
 }
 
-Animal::Animal(std::string type): type(type){
-
-	std::cout << "class [Animal](string) constructor called!\n";
+Animal::Animal(std::string _type)
+{
+	if (INFOS)
+		std::cout << "Animal - Specific constructor called." << std::endl;
+	type = _type;
 }
 
-Animal::Animal(const Animal &obj): type(obj.type){
-
-	std::cout << "class [Animal](Animal) constructor called!\n";
+Animal::Animal(const Animal &tocopy)
+{
+	if (INFOS)
+		std::cout << "Animal - Copy constructor called." << std::endl;
+	type = tocopy.type;
+	*this = tocopy;
 }
 
-Animal::~Animal(void){
-
-	std::cout << this->type << " class [Animal](void) destoryed!!" << std::endl;
+Animal::~Animal()
+{
+	if (INFOS)
+		std::cout << "Animal - Default destructor called." << std::endl;
 }
 
-Animal&				Animal::operator=(const Animal &obj){
-
-	std::cout << "class [Animal](Animal) operator called!\n";
-	if (this != &obj){
-
-		this->type = obj.type;
-	}
-	return *this;
+Animal & Animal::operator = (const Animal &toequalize)
+{
+	if (INFOS)
+		std::cout << "Animal - Assignation operator called." << std::endl;
+	type = toequalize.type;
+	return(*this);
 }
 
-std::string			Animal::getType(void) const{
-
-	return this->type;
+void Animal::makeSound() const
+{
+	std::cout << "Umm... What was I supposed to say here?" << std::endl;
 }
 
-void		Animal::makeSound(void) const{
-
-	std::cout << "Unkown sound!\n";
+const std::string Animal::getType() const
+{
+	return(type);
 }

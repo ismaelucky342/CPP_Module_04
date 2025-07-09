@@ -5,29 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ismherna <ismherna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 17:53:59 by ismherna          #+#    #+#             */
-/*   Updated: 2024/09/16 17:54:00 by ismherna         ###   ########.fr       */
+/*   Created: 2024/10/01 18:03:11 by ismherna          #+#    #+#             */
+/*   Updated: 2024/10/30 19:17:58 by ismherna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
-# include <iostream>
+#ifndef WrongAnimal_HPP
+# define WrongAnimal_HPP
 
-class WrongAnimal {
+#include <iostream>
 
+class WrongAnimal
+{
 	protected:
-		std::string 		type;
-	
+		std::string type;
 	public:
-							WrongAnimal(void);
-							WrongAnimal(std::string type);
-							WrongAnimal(const WrongAnimal &obj);
-		virtual				~WrongAnimal(void);
-		WrongAnimal&				operator=(const WrongAnimal &obj);
-		std::string			getType(void) const;
-		void				makeSound(void) const; // no virtual
-
+		WrongAnimal();
+		WrongAnimal(std::string _type);
+		WrongAnimal(const WrongAnimal &tocopy);
+		virtual ~WrongAnimal();
+		WrongAnimal & operator = (const WrongAnimal &toequalize);
+		void makeSound() const;
+		const std::string getType() const;
 };
 
 #endif

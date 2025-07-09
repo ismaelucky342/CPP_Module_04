@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Rage.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ismherna <ismherna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 18:03:11 by ismherna          #+#    #+#             */
-/*   Updated: 2024/10/30 19:09:52 by ismherna         ###   ########.fr       */
+/*   Created: 2024/10/18 20:22:47 by ismherna          #+#    #+#             */
+/*   Updated: 2024/10/26 23:14:30 by ismherna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef RAGE_HPP
+# define RAGE_HPP
 
-#include <iostream>
+#include "AMateria.hpp"
 
-class WrongAnimal
+class Rage: public AMateria
 {
-	protected:
-		std::string type;
 	public:
-		WrongAnimal();
-		WrongAnimal(std::string _type);
-		WrongAnimal(const WrongAnimal &tocopy);
-		~WrongAnimal();
-		WrongAnimal & operator = (const WrongAnimal &toequalize);
-		void makeSound() const;
-		const std::string getType() const;
+		Rage();
+		Rage(Rage &tocopy);
+		~Rage();
+		Rage & operator = (Rage &toequalize);
+		virtual AMateria* clone() const;
+
+		virtual void use(ICharacter& target);
 };
 
 #endif

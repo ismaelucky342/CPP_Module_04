@@ -5,49 +5,49 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ismherna <ismherna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 17:50:45 by ismherna          #+#    #+#             */
-/*   Updated: 2024/09/16 17:50:46 by ismherna         ###   ########.fr       */
+/*   Created: 2024/10/01 18:03:14 by ismherna          #+#    #+#             */
+/*   Updated: 2024/10/11 21:24:32 by ismherna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void) : type("UnSet"){
-
-	std::cout << "class [Animal](void) constructor called!\n";
+Animal::Animal()
+{
+	type = "???";
+	std::cout << "Animal - Default constructor called." << std::endl;
 }
 
-Animal::Animal(std::string type): type(type){
-
-	std::cout << "class [Animal](string) constructor called!\n";
+Animal::Animal(std::string _type)
+{
+	type = _type;
+	std::cout << "Animal - Specific constructor called." << std::endl;
 }
 
-Animal::Animal(const Animal &obj): type(obj.type){
-
-	std::cout << "class [Animal](Animal) constructor called!\n";
+Animal::Animal(const Animal &tocopy)
+{
+	type = tocopy.type;
+	*this = tocopy;
+	std::cout << "Animal - Copy constructor called." << std::endl;
 }
 
-Animal::~Animal(void){
-
-	std::cout << this->type << " class [Animal](void) destoryed!!" << std::endl;
+Animal::~Animal()
+{
+	std::cout << "Animal - Default destructor called." << std::endl;
 }
 
-Animal&				Animal::operator=(const Animal &obj){
-
-	std::cout << "class [Animal](Animal) operator called!\n";
-	if (this != &obj){
-
-		this->type = obj.type;
-	}
-	return *this;
+Animal & Animal::operator = (const Animal &toequalize)
+{
+	type = toequalize.type;
+	return(*this);
 }
 
-std::string			Animal::getType(void) const{
-
-	return this->type;
+void Animal::makeSound() const
+{
+	std::cout << "Umm... What was I supposed to say here?" << std::endl;
 }
 
-void		Animal::makeSound(void) const{
-
-	std::cout << "Unkown sound!\n";
+const std::string Animal::getType() const
+{
+	return(type);
 }

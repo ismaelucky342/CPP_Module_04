@@ -5,23 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ismherna <ismherna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 17:51:39 by ismherna          #+#    #+#             */
-/*   Updated: 2024/09/16 17:51:42 by ismherna         ###   ########.fr       */
+/*   Created: 2024/10/01 18:03:19 by ismherna          #+#    #+#             */
+/*   Updated: 2024/10/30 19:10:18 by ismherna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
-# include "Animal.hpp"
 
-class Cat: public Animal{
+#include "Animal.hpp"
 
+class Cat: public Animal
+{
 	public:
-							Cat(void);
-							Cat(const Cat &obj);
-							~Cat(void);
-		Cat&				operator=(const Cat &obj);
-		void				makeSound(void) const;
-
+		Cat();
+		Cat(Cat &tocopy);
+		~Cat();
+		Cat & operator = (Cat &toequalize);
+		virtual void makeSound() const;
 };
+
 #endif

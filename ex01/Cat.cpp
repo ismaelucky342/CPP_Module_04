@@ -5,36 +5,58 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ismherna <ismherna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 17:51:23 by ismherna          #+#    #+#             */
-/*   Updated: 2024/09/16 17:51:30 by ismherna         ###   ########.fr       */
+/*   Created: 2024/10/01 18:03:17 by ismherna          #+#    #+#             */
+/*   Updated: 2024/10/18 18:15:38 by ismherna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat(void): Animal("Cat") {
-
-	std::cout << "Class [Cat](void) constructor called!!\n";
-}
-Cat::Cat(const Cat &obj): Animal(obj.type){
-	
-	std::cout << "Class [Cat](Cat) constructor called!!\n";
-}
-Cat::~Cat(void){
-
-	std::cout << "Class [Cat](Cat) destructor called!!\n";
-}
-Cat&				Cat::operator=(const Cat &obj){
-
-	if (this != &obj){
-
-		this->type = obj.type;
-	}
-	std::cout << "Class [Cat](Cat) operator called!!\n";
-	return *this;
+Cat::Cat()
+{
+	if (INFOS)
+		std::cout << "Cat  --  Default constructor called." << std::endl;
+	mind = new Brain();
+	type = "Cat";
 }
 
-void				Cat::makeSound(void) const{
+Cat::Cat(Cat &tocopy)
+{
+	if (INFOS)
+		std::cout << "Cat  --  Copy constructor called." << std::endl;
+	mind = NULL;
+	*this = tocopy;
+}
 
-	std::cout << "miao miao miao!\n";
+Cat::~Cat()
+{
+	if (INFOS)
+		std::cout << "Cat  --  Default destructor called." << std::endl;
+	delete mind;
+}
+
+Cat & Cat::operator = (Cat &toequalize)
+{
+	if (INFOS)
+		std::cout << "Cat  --  Assignation operator called." << std::endl;
+	type = toequalize.type;
+	if (mind != NULL)
+		delete mind;
+	mind = new Brain(*toequalize.mind);
+	return(*this);
+}
+
+void Cat::makeSound() const
+{
+	std::cout << "Meow!" << std::endl;
+}
+
+void Cat::cat_think(int index, std::string newidea)
+{
+	mind->think(index, newidea);
+}
+
+std::string Cat::cat_recall(int index)
+{
+	return(mind->recall(index));
 }

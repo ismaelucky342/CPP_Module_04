@@ -1,0 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ismherna <ismherna@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/01 18:03:19 by ismherna          #+#    #+#             */
+/*   Updated: 2024/10/30 19:08:42 by ismherna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CAT_HPP
+# define CAT_HPP
+
+#include "Animal.hpp"
+
+class Cat: public Animal
+{
+	private:
+		Brain *mind;
+	public:
+		Cat();
+		Cat(Cat &tocopy);
+		virtual ~Cat();
+		Cat & operator = (Cat &toequalize);
+		virtual void makeSound() const;
+		void cat_think(int index, std::string newidea);
+		std::string cat_recall(int index);
+};
+
+#endif

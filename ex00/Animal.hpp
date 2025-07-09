@@ -5,29 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ismherna <ismherna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 17:51:07 by ismherna          #+#    #+#             */
-/*   Updated: 2024/09/16 17:51:08 by ismherna         ###   ########.fr       */
+/*   Created: 2024/10/01 18:03:11 by ismherna          #+#    #+#             */
+/*   Updated: 2024/10/30 19:17:21 by ismherna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
-# include <iostream>
 
-class Animal {
+#include <iostream>
 
+class Animal
+{
 	protected:
-		std::string 		type;
-	
+		std::string type;
 	public:
-							Animal(void);
-							Animal(std::string type);
-							Animal(const Animal &obj);
-		virtual				~Animal(void);
-		Animal&				operator=(const Animal &obj);
-		std::string			getType(void) const;
-		virtual	void		makeSound(void) const;
-
+		Animal();
+		Animal(std::string _type);
+		Animal(const Animal &tocopy);
+		virtual ~Animal();
+		Animal & operator = (const Animal &toequalize);
+		virtual void makeSound() const;
+		const std::string getType() const;
 };
 
 #endif

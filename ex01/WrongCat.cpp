@@ -5,36 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ismherna <ismherna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 18:02:15 by ismherna          #+#    #+#             */
-/*   Updated: 2024/09/16 18:02:16 by ismherna         ###   ########.fr       */
+/*   Created: 2024/10/01 18:03:17 by ismherna          #+#    #+#             */
+/*   Updated: 2024/10/19 21:48:11 by ismherna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat(void): WrongAnimal("WrongCat") {
-
-	std::cout << "Class [WrongCat](void) constructor called!!\n";
-}
-WrongCat::WrongCat(const WrongCat &obj): WrongAnimal(obj.type){
-	
-	std::cout << "Class [WrongCat](WrongCat) constructor called!!\n";
-}
-WrongCat::~WrongCat(void){
-
-	std::cout << "Class [WrongCat](WrongCat) destructor called!!\n";
-}
-WrongCat&				WrongCat::operator=(const WrongCat &obj){
-
-	if (this != &obj){
-
-		this->type = obj.type;
-	}
-	std::cout << "Class [WrongCat](WrongCat) operator called!!\n";
-	return *this;
+WrongCat::WrongCat()
+{
+	type = "WrongCat";
+	std::cout << "WrongCat  --  Default constructor called." << std::endl;
 }
 
-void				WrongCat::makeSound(void) const{
+WrongCat::~WrongCat()
+{
+	std::cout << "WrongCat  --  Default destructor called." << std::endl;
+}
 
-	std::cout << "miao miao miao!\n";
+WrongCat & WrongCat::operator = (WrongCat &toequalize)
+{
+	type = toequalize.type;
+	return(*this);
+}
+
+void WrongCat::makeSound() const
+{
+	std::cout << "Meow but wrong!" << std::endl;
 }
