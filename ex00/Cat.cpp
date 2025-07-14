@@ -18,7 +18,7 @@ Cat::Cat()
 	std::cout << "Cat  --  Default constructor called." << std::endl;
 }
 
-Cat::Cat(Cat &tocopy)
+Cat::Cat(Cat &tocopy) : Animal(tocopy)
 {
 	*this = tocopy;
 	std::cout << "Cat  --  Copy constructor called." << std::endl;
