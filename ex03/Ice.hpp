@@ -13,7 +13,11 @@
 #ifndef ICE_HPP
 # define ICE_HPP
 
+/*=================================HEADERS===================================*/
+
 #include "AMateria.hpp"
+
+/*=================================CLASS===================================*/
 
 class Ice: public AMateria
 {

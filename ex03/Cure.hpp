@@ -13,7 +13,11 @@
 #ifndef CURE_HPP
 # define CURE_HPP
 
+/*=================================HEADERS===================================*/
+
 #include "AMateria.hpp"
+
+/*=================================CLASS===================================*/
 
 class Cure: public AMateria
 {

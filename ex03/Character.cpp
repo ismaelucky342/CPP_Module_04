@@ -15,7 +15,7 @@
 Character::Character()
 {
 	if (NOTIFS)
-		std::cout << "Character default constructor called." << std::endl;
+		std::cout << BRIGHT_GREEN << "Character default constructor called." << RESET << std::endl;
 	name = "???";
 	int a = 0;
 	while (a < 4)
@@ -25,7 +25,7 @@ Character::Character()
 Character::Character(std::string _name)
 {
 	if (NOTIFS)
-		std::cout << "Character constructor called." << std::endl;
+		std::cout << YELLOW << "Character constructor called." << RESET << std::endl;
 	name = _name;
 	int a = 0;
 	while (a < 4)
@@ -35,20 +35,20 @@ Character::Character(std::string _name)
 Character::Character(Character &tocopy)
 {
 	if (NOTIFS)
-		std::cout << "Character copy constructor called." << std::endl;
+		std::cout << BLUE << "Character copy constructor called." << RESET << std::endl;
 	(*this) = tocopy;
 }
 
 Character::~Character()
 {
 	if (NOTIFS)
-		std::cout << "Character default destructor called." << std::endl;
+		std::cout << BRIGHT_RED << "Character default destructor called." << RESET << std::endl;
 }
 
 Character & Character::operator = (Character &toequalize)
 {
 	if (NOTIFS)
-		std::cout << "Character assignation operator called." << std::endl;
+		std::cout << BLUE << "Character assignation operator called." << RESET << std::endl;
 	name = toequalize.getName();
 	int a = 0;
 	while (a < 4)
@@ -70,7 +70,7 @@ void Character::equip(AMateria* m)
 
 	if (!m)
 	{
-		std::cout << "There's nothing to equip!" << std::endl;
+		std::cout << RED << "There's nothing to equip!" << RESET << std::endl;
 		return ;
 	}
 	while (a < 4)
@@ -104,7 +104,7 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter& target)
 {
 	if (!slots[idx])
-		std::cout << "* unsuccessfully tried to pick a weapon to attack " << target.getName() << " *" << std::endl;
+		std::cout << RED << "* unsuccessfully tried to pick a weapon to attack " << target.getName() << " *" << RESET << std::endl;
 	else
 	{
 		slots[idx]->use(target);

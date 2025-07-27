@@ -13,8 +13,9 @@
 #ifndef NOTIFICATIONS_HPP
 # define NOTIFICATIONS_HPP
 
-#define NOTIFS 0
+/*=================================HEADERS===================================*/
 
+#define NOTIFS 0
 #include <iostream>
 
 #endif

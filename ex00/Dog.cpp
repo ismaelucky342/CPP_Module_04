@@ -15,18 +15,18 @@
 Dog::Dog()
 {
 	type = "Dog";
-	std::cout << "Dog  --  Default constructor called." << std::endl;
+	std::cout << BRIGHT_GREEN << "Dog  --  Default constructor called." << RESET << std::endl;
 }
 
 Dog::Dog(Dog &tocopy) : Animal(tocopy)
 {
 	*this = tocopy;
-	std::cout << "Dog  --  Copy constructor called." << std::endl;
+	std::cout << BLUE << "Dog  --  Copy constructor called." << RESET << std::endl;
 }
 
 Dog::~Dog()
 {
-	std::cout << "Dog  --  Default destructor called." << std::endl;
+	std::cout << BRIGHT_RED << "Dog  --  Default destructor called." << RESET << std::endl;
 }
 
 Dog & Dog::operator = (Dog &toequalize)

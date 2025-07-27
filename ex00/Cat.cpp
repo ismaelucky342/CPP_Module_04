@@ -15,18 +15,18 @@
 Cat::Cat()
 {
 	type = "Cat";
-	std::cout << "Cat  --  Default constructor called." << std::endl;
+	std::cout << BRIGHT_GREEN << "Cat  --  Default constructor called." << RESET << std::endl;
 }
 
 Cat::Cat(Cat &tocopy) : Animal(tocopy)
 {
 	*this = tocopy;
-	std::cout << "Cat  --  Copy constructor called." << std::endl;
+	std::cout << BLUE << "Cat  --  Copy constructor called." << RESET << std::endl;
 }
 
 Cat::~Cat()
 {
-	std::cout << "Cat  --  Default destructor called." << std::endl;
+	std::cout << BRIGHT_RED << "Cat  --  Default destructor called." << RESET << std::endl;
 }
 
 Cat & Cat::operator = (Cat &toequalize)

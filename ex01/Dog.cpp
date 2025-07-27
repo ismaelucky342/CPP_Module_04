@@ -15,7 +15,7 @@
 Dog::Dog()
 {
 	if (INFOS)
-		std::cout << "Dog  --  Default constructor called." << std::endl;
+		std::cout << BRIGHT_GREEN << "Dog  --  Default constructor called." << RESET << std::endl;
 	mind = new Brain();
 	type = "Dog";
 }
@@ -23,7 +23,7 @@ Dog::Dog()
 Dog::Dog(Dog &tocopy)
 {
 	if (INFOS)
-		std::cout << "Dog  --  Copy constructor called." << std::endl;
+		std::cout << BLUE << "Dog  --  Copy constructor called." << RESET << std::endl;
 	mind = NULL;
 	*this = tocopy;
 }
@@ -31,7 +31,7 @@ Dog::Dog(Dog &tocopy)
 Dog::~Dog()
 {
 	if (INFOS)
-		std::cout << "Dog  --  Default destructor called." << std::endl;
+		std::cout << BRIGHT_RED << "Dog  --  Default destructor called." << RESET << std::endl;
 	delete mind;
 }
 

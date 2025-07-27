@@ -15,7 +15,7 @@
 Cat::Cat()
 {
 	if (INFOS)
-		std::cout << "Cat  --  Default constructor called." << std::endl;
+		std::cout << BRIGHT_GREEN << "Cat  --  Default constructor called." << RESET << std::endl;
 	mind = new Brain();
 	type = "Cat";
 }
@@ -23,7 +23,7 @@ Cat::Cat()
 Cat::Cat(Cat &tocopy)
 {
 	if (INFOS)
-		std::cout << "Cat  --  Copy constructor called." << std::endl;
+		std::cout << BLUE << "Cat  --  Copy constructor called." << RESET << std::endl;
 	mind = NULL;
 	*this = tocopy;
 }
@@ -31,7 +31,7 @@ Cat::Cat(Cat &tocopy)
 Cat::~Cat()
 {
 	if (INFOS)
-		std::cout << "Cat  --  Default destructor called." << std::endl;
+		std::cout << BRIGHT_RED << "Cat  --  Default destructor called." << RESET << std::endl;
 	delete mind;
 }
 

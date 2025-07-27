@@ -15,25 +15,25 @@
 WrongAnimal::WrongAnimal()
 {
 	type = "???";
-	std::cout << "WrongAnimal - Default constructor called." << std::endl;
+	std::cout << BRIGHT_GREEN << "WrongAnimal - Default constructor called." << RESET << std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string _type)
 {
 	type = _type;
-	std::cout << "WrongAnimal - Specific constructor called." << std::endl;
+	std::cout << YELLOW << "WrongAnimal - Specific constructor called." << RESET << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &tocopy)
 {
 	type = tocopy.type;
 	*this = tocopy;
-	std::cout << "WrongAnimal - Copy constructor called." << std::endl;
+	std::cout << BLUE << "WrongAnimal - Copy constructor called." << RESET << std::endl;
 }
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAnimal - Default destructor called." << std::endl;
+	std::cout << BRIGHT_RED << "WrongAnimal - Default destructor called." << RESET << std::endl;
 }
 
 WrongAnimal & WrongAnimal::operator = (const WrongAnimal &toequalize)

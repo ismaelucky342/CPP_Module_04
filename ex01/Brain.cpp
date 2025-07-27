@@ -15,13 +15,13 @@
 Brain::Brain()
 {
 	if (INFOS)
-		std::cout << "Brain -- Default constructor called." << std::endl;
+		std::cout << BRIGHT_GREEN << "Brain -- Default constructor called." << RESET << std::endl;
 }
 
 Brain::Brain(Brain &tocopy)
 {
 	if (INFOS)
-		std::cout << "Brain -- Copy constructor called." << std::endl;
+		std::cout << BLUE << "Brain -- Copy constructor called." << RESET << std::endl;
 	int a = 0;
 
 	while (a < 100)
@@ -35,7 +35,7 @@ Brain::Brain(Brain &tocopy)
 Brain::~Brain()
 {
 	if (INFOS)
-		std::cout << "Brain -- Default destructor called." << std::endl;
+		std::cout << BRIGHT_RED << "Brain -- Default destructor called." << RESET << std::endl;
 }
 
 Brain & Brain::operator = (Brain &toequalize)

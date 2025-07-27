@@ -44,7 +44,7 @@ AMateria *MateriaSource::createMateria(std::string const &type_search)
 		}
 		a++;
 	}
-	std::cout << "Error: Materia " << type_search << " was not found." << std::endl;
+	std::cout << BRIGHT_RED << "Error: Materia " << type_search << " was not found." << RESET << std::endl;
 	return (NULL);
 }
 
@@ -60,7 +60,7 @@ MateriaSource::MateriaSource()
 MateriaSource::MateriaSource(MateriaSource &tocopy)
 {
 	if (NOTIFS)
-		std::cout << "MateriaSource copy constructor called." << std::endl;
+		std::cout << BLUE << "MateriaSource copy constructor called." << RESET << std::endl;
 	int a = 0;
 	while (a < 4)
 	{
@@ -72,13 +72,13 @@ MateriaSource::MateriaSource(MateriaSource &tocopy)
 MateriaSource::~MateriaSource()
 {
 	if (NOTIFS)
-		std::cout << "MateriaSource default destructor called." << std::endl;
+		std::cout << BRIGHT_RED << "MateriaSource default destructor called." << RESET << std::endl;
 }
 
 MateriaSource & MateriaSource::operator = (MateriaSource &toequalize)
 {
 	if (NOTIFS)
-		std::cout << "MateriaSource assignation operator called." << std::endl;
+		std::cout << GREEN << "MateriaSource assignation operator called." << RESET << std::endl;
 	int a = 0;
 
 	while (a < 4)

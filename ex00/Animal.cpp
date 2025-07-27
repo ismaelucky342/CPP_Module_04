@@ -15,25 +15,25 @@
 Animal::Animal()
 {
 	type = "???";
-	std::cout << "Animal - Default constructor called." << std::endl;
+	std::cout << BRIGHT_GREEN << "Animal - Default constructor called." << RESET << std::endl;
 }
 
 Animal::Animal(std::string _type)
 {
 	type = _type;
-	std::cout << "Animal - Specific constructor called." << std::endl;
+	std::cout << YELLOW << "Animal - Specific constructor called." << RESET << std::endl;
 }
 
 Animal::Animal(const Animal &tocopy)
 {
 	type = tocopy.type;
 	*this = tocopy;
-	std::cout << "Animal - Copy constructor called." << std::endl;
+	std::cout << BLUE << "Animal - Copy constructor called." << RESET << std::endl;
 }
 
 Animal::~Animal()
 {
-	std::cout << "Animal - Default destructor called." << std::endl;
+	std::cout << BRIGHT_RED << "Animal - Default destructor called." << RESET << std::endl;
 }
 
 Animal & Animal::operator = (const Animal &toequalize)

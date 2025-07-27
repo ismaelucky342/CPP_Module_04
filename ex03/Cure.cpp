@@ -15,26 +15,26 @@
 Cure::Cure(): AMateria("cure")
 {
 	if (NOTIFS)
-		std::cout << "Cure default constructor called." << std::endl;
+		std::cout << BRIGHT_GREEN << "Cure default constructor called." << RESET << std::endl;
 }
 
 Cure::Cure(Cure &tocopy): AMateria("cure")
 {
 	if (NOTIFS)
-		std::cout << "Cure copy constructor called." << std::endl;
+		std::cout << BLUE << "Cure copy constructor called." << RESET << std::endl;
 	*this = tocopy;
 }
 
 Cure::~Cure()
 {
 	if (NOTIFS)
-		std::cout << "Cure default destructor called." << std::endl;
+		std::cout << BRIGHT_RED << "Cure default destructor called." << RESET << std::endl;
 }
 
 Cure & Cure::operator = (Cure &toequalize)
 {
 	if (NOTIFS)
-		std::cout << "Cure assignation operator called." << std::endl;
+		std::cout << GREEN << "Cure assignation operator called." << RESET << std::endl;
 	(void)toequalize;
 	return (*this);
 }

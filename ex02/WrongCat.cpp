@@ -15,12 +15,12 @@
 WrongCat::WrongCat()
 {
 	type = "WrongCat";
-	std::cout << "WrongCat  --  Default constructor called." << std::endl;
+	std::cout << BRIGHT_GREEN << "WrongCat  --  Default constructor called." << RESET << std::endl;
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << "WrongCat  --  Default destructor called." << std::endl;
+	std::cout << BRIGHT_RED << "WrongCat  --  Default destructor called." << RESET << std::endl;
 }
 
 WrongCat & WrongCat::operator = (WrongCat &toequalize)

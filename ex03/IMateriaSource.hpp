@@ -13,8 +13,12 @@
 #ifndef IMATERIASOURCE_HPP
 # define IMATERIASOURCE_HPP
 
+/*=================================HEADERS===================================*/
+
 #include "notifications.hpp"
 #include "AMateria.hpp"
+
+/*=================================CLASS===================================*/
 
 class IMateriaSource
 {

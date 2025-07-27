@@ -13,7 +13,11 @@
 #ifndef RAGE_HPP
 # define RAGE_HPP
 
+/*=================================HEADERS===================================*/
+
 #include "AMateria.hpp"
+
+/*=================================CLASS===================================*/
 
 class Rage: public AMateria
 {

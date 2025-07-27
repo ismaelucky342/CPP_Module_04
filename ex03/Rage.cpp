@@ -15,26 +15,26 @@
 Rage::Rage(): AMateria("rage")
 {
 	if (NOTIFS)
-		std::cout << "Rage default constructor called." << std::endl;
+		std::cout << BRIGHT_GREEN << "Rage default constructor called." << RESET << std::endl;
 }
 
 Rage::Rage(Rage &tocopy): AMateria("rage")
 {
 	if (NOTIFS)
-		std::cout << "Rage copy constructor called." << std::endl;
+		std::cout << BLUE << "Rage copy constructor called." << RESET << std::endl;
 	*this = tocopy;
 }
 
 Rage::~Rage()
 {
 	if (NOTIFS)
-		std::cout << "Rage default destructor called." << std::endl;
+		std::cout << BRIGHT_RED << "Rage default destructor called." << RESET << std::endl;
 }
 
 Rage & Rage::operator = (Rage &toequalize)
 {
 	if (NOTIFS)
-		std::cout << "Rage assignation operator called." << std::endl;
+		std::cout << GREEN << "Rage assignation operator called." << RESET << std::endl;
 	(void)toequalize;
 	return (*this);
 }

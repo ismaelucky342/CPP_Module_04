@@ -20,21 +20,21 @@ AMateria::AMateria()
 AMateria::AMateria(std::string const & type)
 {
 	if (NOTIFS)
-		std::cout << "AMateria constructor called." << std::endl;
+		std::cout << YELLOW << "AMateria constructor called." << RESET << std::endl;
 	_type = type;
 }
 
 AMateria::AMateria(AMateria &tocopy)
 {
 	if (NOTIFS)
-		std::cout << "AMateria copy constructor called." << std::endl;
+		std::cout << BLUE << "AMateria copy constructor called." << RESET << std::endl;
 	*this = tocopy;
 }
 
 AMateria::~AMateria()
 {
 	if (NOTIFS)
-		std::cout << "AMateria default destructor called." << std::endl;
+		std::cout << BRIGHT_RED << "AMateria default destructor called." << RESET << std::endl;
 }
 
 AMateria & AMateria::operator = (AMateria &toequalize)

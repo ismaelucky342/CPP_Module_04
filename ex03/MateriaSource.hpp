@@ -12,7 +12,12 @@
 
 #ifndef MATERIASOURCE_HPP
 # define MATERIASOURCE_HPP
+
+/*=================================HEADERS===================================*/
+
 #include "IMateriaSource.hpp"
+
+/*=================================CLASS===================================*/
 
 class MateriaSource: public IMateriaSource
 {

@@ -13,7 +13,11 @@
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
+/*=================================HEADERS===================================*/
+
 #include "notifications.hpp"
+
+/*=================================FORWARD DECLARATION========================*/
 
 class AMateria;
 

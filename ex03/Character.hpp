@@ -13,8 +13,12 @@
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
+/*=================================HEADERS===================================*/
+
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
+
+/*=================================CLASS===================================*/
 
 class Character: public ICharacter
 {

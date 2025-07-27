@@ -15,26 +15,26 @@
 Ice::Ice(): AMateria("ice")
 {
 	if (NOTIFS)
-		std::cout << "Ice default constructor called." << std::endl;
+		std::cout << BRIGHT_GREEN << "Ice default constructor called." << RESET << std::endl;
 }
 
 Ice::Ice(Ice &tocopy): AMateria("ice")
 {
 	if (NOTIFS)
-		std::cout << "Ice copy constructor called." << std::endl;
+		std::cout << BLUE << "Ice copy constructor called." << RESET << std::endl;
 	*this = tocopy;
 }
 
 Ice::~Ice()
 {
 	if (NOTIFS)
-		std::cout << "Ice default destructor called." << std::endl;
+		std::cout << BRIGHT_RED << "Ice default destructor called." << RESET << std::endl;
 }
 
 Ice & Ice::operator = (Ice &toequalize)
 {
 	if (NOTIFS)
-		std::cout << "Ice assignation operator called." << std::endl;
+		std::cout << GREEN << "Ice assignation operator called." << RESET << std::endl;
 	(void)toequalize;
 	return (*this);
 }
