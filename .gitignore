@@ -1,0 +1,20 @@
+# Compiled objects and libraries
+*.o
+*.a
+*.so
+
+# Build executables
+/ex00/Polymorphism
+/ex01/Polymorphism
+/ex02/Polymorphism
+/ex03/Polymorphism
+*.out
+a.out
+
+# Local and crash-generated files
+.DS_Store
+*.swp
+*~
+core
+core.*
+vgcore.*
